@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI计算器</title>
+</head>
+<body>
+
+    <script>
+
+        // 注释
+        // prompt() js内置函数
+        let weight=Number(  prompt("请输入您的体重(公斤)") );
+        let height=Number(  prompt("请输入身高( cm )")  );
+
+        // 身高转换成米
+        height=height/100;
+
+        //bmi计算
+        let bmi= weight/ (height*height );
+        let result="";
+
+        if(   bmi<18.5  ){
+            result="偏瘦";
+        }else if( bmi<24 ){
+            result="正常";
+        }else if( bmi<28 ){
+            result="超重";
+        }else{
+            result="肥胖";
+        }
+
+        //1. 控制台输出
+        console.log( "当前bmi:"+ bmi.toFixed(2) );
+        console.log( "当前身体状态:"+ result );
+        console.log( `您的bmi为${bmi.toFixed(2)}, 当前身体状态为${result}` );
+
+        //2. 以提示框输出
+        window.alert(  "bmi:"+ bmi.toFixed(2)  );
+        window.alert(  `BMI: ${ bmi.toFixed( 2 ) }`  );
+
+        // 3. 输出到html页面
+        document.write( "<b>bmi:"+ bmi.toFixed(2) +"</b>, 您的身体状态为:" );
+        if(  bmi>=28  ){
+            document.write("<span style='color:red;'>肥胖</span>");
+        }else{
+            document.write( "<span style='color:green;'>正常</span>" );
+        }
+
+    </script>
+</body>
+</html>

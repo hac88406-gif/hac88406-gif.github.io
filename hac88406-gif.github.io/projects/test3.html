@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 基础学习 - 年龄计算器</title>
+</head>
+<body>
+
+    <script>
+
+        let birthYear = Number(prompt("请输入您的出生年份"));
+
+        let currentDate = new Date();
+        let currentYear = currentDate.getFullYear();
+
+        if (birthYear > currentYear) {
+            alert("您输入的出生年份有误");
+        } else {
+            let age = currentYear - birthYear;
+            console.log(`您的年龄是：${age}`);
+            document.write(`您出生在${birthYear}年，您的年龄是<span style="color:red;font-size:20px;">${age}</span>岁`);
+        }
+
+    </script>
+
+</body>
+</html>
